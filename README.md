@@ -78,3 +78,25 @@ In order to make our bash scripts executable we need to change linux permission 
 ```sh
 chmod 744 ./bin/install_terraform_cli
 ```
+
+### ENV Variable
+
+Create `.env.example` file
+
+```
+cat .env.example 
+PROJECT_ROOT='/workspace/terraform-beginner-bootcamp-2023'
+```
+
+
+``` BASH
+$ export PROJECT_ROOT='/workspace/terraform-beginner-boo
+tcamp-2023'
+$ gp env PROJECT_ROOT='/workspace/terraform-beginner-boo
+tcamp-2023'
+PROJECT_ROOT=/workspace/terraform-beginner-bootcamp-2023
+$ echo $PROJECT_ROOT
+/workspace/terraform-beginner-bootcamp-2023
+$ 
+```
+
