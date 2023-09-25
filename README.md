@@ -302,3 +302,45 @@ Please refer below screenshots for the details steps
 ## 0.8.0 generate_tfrc_credentials automated
 
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
+---
+
+## 0.9.0 TF Aliase
+
+Create new file `./bin/set_tf_alias` and add the file in `.gitpod.yml`
+
+```sh
+#!/usr/bin/env bash
+
+# Check if the alias already exists in the .bash_profile
+grep -q 'alias tf="terraform"' ~/.bash_profile
+
+# $? is a special variable in bash that holds the exit status of the last command executed
+if [ $? -ne 0 ]; then
+    # If the alias does not exist, append it
+    echo 'alias tf="terraform"' >> ~/.bash_profile
+    echo "Alias added successfully."
+else
+    # Inform the user if the alias already exists
+    echo "Alias already exists in .bash_profile."
+fi
+
+# Optional: source the .bash_profile to make the alias available immediately
+source ~/.bash_profile
+
+```
+
+```sh
+  - name: terraform
+    before: |
+      source ./bin/set_tf_alias
+      ...
+      ...
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    before: |
+      source ./bin/set_tf_alias
+```
+
+---
