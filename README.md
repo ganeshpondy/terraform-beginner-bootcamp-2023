@@ -197,7 +197,9 @@ output "random_bucket_name" {
 
 ```
 
-## Create S# Bucket with Random Value
+---
+
+## 0.6.0 Create S3 Bucket with Random Value
 
 Added AWS Provider in the Code and added S3 Bucket Creation Steps. S3 Bucket Name will the taken form the Random Value Output.
 
