@@ -100,3 +100,61 @@ $ echo $PROJECT_ROOT
 $ 
 ```
 
+### AWS CLI Installation
+
+AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+- Create ./bin/install_aws_cli.sh
+- Create IAM User in AWS Console with Admin Privileges
+- Export the Crediantial into Env Variables
+
+```bash
+#!/usr/bin/env bash
+
+cd /workspace
+
+rm -f '/workspace/awscliv2.zip'
+rm -rf '/workspace/aws'
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+aws sts get-caller-identity
+
+cd $PROJECT_ROOT
+```
+
+We can check if our AWS credentials is configured correctly by running the following AWS CLI command:
+```sh
+aws sts get-caller-identity
+```
+
+```bash
+> aws sts get-caller-identity
+
+Unable to locate credentials. You can configure credentials by running "aws configure".
+```
+
+#### Export the Crediantial into Env Variables
+
+export AWS_ACCESS_KEY_ID="USERID"
+export AWS_SECRET_ACCESS_KEY="Password+Uo64vZNyt"
+export AWS_DEFAULT_REGION="ap-south-1"
+
+gp env AWS_ACCESS_KEY_ID="USERID"
+gp env AWS_SECRET_ACCESS_KEY="Password+Uo64vZNyt"
+gp env AWS_DEFAULT_REGION="ap-south-1"
+
+env | grep -i aws_
+
+```JSON
+gitpod /workspace/terraform-beginner-bootcamp-2023 (main) $ aws sts get-caller-ident
+> aws sts get-caller-identity
+{
+    "UserId": "USERID",
+    "Account": "Account-Number",
+    "Arn": "arn:aws:iam::Account-Number:user/IAM-Username"
+}
+gitpod /workspace/terraform-beginner-bootcamp-2023 (main) $```
+
