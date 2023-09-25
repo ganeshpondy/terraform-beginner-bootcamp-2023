@@ -296,3 +296,9 @@ Please refer below screenshots for the details steps
 
 
 ![01_Terraform_Variables](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/14f728db-b690-40c2-ae7f-1fc15462dd3f)
+
+---
+
+## 0.8.0 generate_tfrc_credentials automated
+
+We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
