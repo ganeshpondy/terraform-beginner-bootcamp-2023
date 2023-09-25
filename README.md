@@ -270,4 +270,29 @@ terraform {
 ```
 
 2. Add AWS Crediantials as Variables in Terraform Cloud to run terraform commands sucessfully.
+and S3 Bucket is created sucessfully.
 
+![02_S3_Bucket_Name](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/c794e1ac-7eca-45e2-812b-0fe7030382f4)
+
+
+
+
+Issue : After adding Terraform Cloud Backend, Terrafprm Plan is getting below error 
+
+```
+Error: No valid credential sources found
+with provider["registry.terraform.io/hashicorp/aws"]
+on main.tf line 20, in provider "aws":
+provider "aws" {
+Please see https://registry.terraform.io/providers/hashicorp/aws
+for more information about providing credentials.
+
+Error: failed to refresh cached credentials, no EC2 IMDS role found, operation error ec2imds: GetMetadata, request canceled, context deadline exceeded
+```
+
+Solution:
+Issue is Resolved by adding AWS Crediantial as Variable in Terraform CLoud. 
+Please refer below screenshots for the details steps
+
+
+![01_Terraform_Variables](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/14f728db-b690-40c2-ae7f-1fc15462dd3f)
