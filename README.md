@@ -196,3 +196,58 @@ output "random_bucket_name" {
 }
 
 ```
+
+## Create S# Bucket with Random Value
+
+Added AWS Provider in the Code and added S3 Bucket Creation Steps. S3 Bucket Name will the taken form the Random Value Output.
+
+``` JSON
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "3.5.1"
+    }
+    aws = {
+      source = "hashicorp/aws"
+      version = "5.16.2"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+}
+provider "random" {
+  # Configuration options
+}
+
+# https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string
+resource "random_string" "bucket_name" {
+  lower = true
+  upper = false
+  length   = 32
+  special  = false
+}
+
+resource "aws_s3_bucket" "s3-bucket" {
+  # Bucket Naming Rules
+  bucket = random_string.bucket_name.result
+}
+
+output "random_bucket_name" {
+  value = random_string.bucket_name.result
+}
+
+output "S3_bucket_name" {
+  value = aws_s3_bucket.s3-bucket.id
+}
+```
+
+Outputs :
+
+```YAML
+S3_bucket_name     = "orjschtzeb8oiumf2ljfis22xmghu8mf"
+random_bucket_name = "orjschtzeb8oiumf2ljfis22xmghu8mf"
+```
+
