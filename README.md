@@ -252,4 +252,22 @@ Outputs :
 S3_bucket_name     = "orjschtzeb8oiumf2ljfis22xmghu8mf"
 random_bucket_name = "orjschtzeb8oiumf2ljfis22xmghu8mf"
 ```
+---
+
+## 0.7.0 Terraform Cloud
+
+1. Create organization and workspaces and add below line in main.tf to update Teraform backend in Terraform CLoud
+
+``` JSON
+terraform {
+  cloud {
+    organization = "Terraform_Beginner_Bootcamp_Ganeshpondy"
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
+}
+```
+
+2. Add AWS Crediantials as Variables in Terraform Cloud to run terraform commands sucessfully.
 
