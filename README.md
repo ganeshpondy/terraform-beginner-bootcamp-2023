@@ -156,5 +156,43 @@ gitpod /workspace/terraform-beginner-bootcamp-2023 (main) $ aws sts get-caller-i
     "Account": "Account-Number",
     "Arn": "arn:aws:iam::Account-Number:user/IAM-Username"
 }
-gitpod /workspace/terraform-beginner-bootcamp-2023 (main) $```
+gitpod /workspace/terraform-beginner-bootcamp-2023 (main) $
+```
 
+
+---
+
+## 0.5.0 Terraform Randam ID for S3 Bucket
+
+### Terraform Lock Files
+
+`.terraform.lock.hcl` contains the locked versioning for the providers or modulues that should be used with this project.
+
+The Terraform Lock File **should be committed** to your Version Control System (VSC) eg. Github
+
+#### Randon Number main.tf code 
+
+```JSON
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "3.5.1"
+    }
+  }
+}
+
+provider "random" {
+  
+}
+
+resource "random_string" "bucket_name" {
+  length = 16
+  special = false
+}
+
+output "random_bucket_name" {
+    value = random_string.bucket_name.result
+}
+
+```
