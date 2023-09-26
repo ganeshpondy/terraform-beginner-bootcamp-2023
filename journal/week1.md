@@ -31,3 +31,6 @@ We can set Terraform Cloud variables to be sensitive so they are not shown visib
 
 [Terraform Input Variables](https://developer.hashicorp.com/terraform/language/values/variables)
 
+![Variables_Flow](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/3dcdfa00-6d2e-4b9c-be70-8a743b75429c)
+
+
