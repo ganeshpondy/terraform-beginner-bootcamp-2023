@@ -57,7 +57,7 @@ You can use terraform port but it won't for all cloud resources. You need check 
 
 If someone goes and delete or modifies cloud resource manually through ClickOps. 
 
-<!-- If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
+If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
 
 ``` TF
 Import :
@@ -83,4 +83,4 @@ variable "bucket_name" {
     error_message = "The bucket name must be between 3 and 63 characters, start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, hyphens, and dots."
   }
 }
-``` -->
+```
