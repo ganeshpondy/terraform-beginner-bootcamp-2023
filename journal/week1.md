@@ -98,3 +98,45 @@ output "bucket_name" {
   value = module.terrahousr_aws.bucket_name
 }
 ```
+---
+
+## 1.4.0 - S3 Static Website Hosting
+
+Enable WebSite in the S3 Bucket
+
+``` tf
+resource "aws_s3_bucket_website_configuration" "website_configuration" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+}
+
+```
+
+Copy `index.html` and `error.html` file to S3 Bucket
+
+`etag` will check the file modified time and copy if the file is modified
+
+``` tf
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = var.index_html_filepath
+
+  etag = filemd5(var.index_html_filepath)   
+}
+
+resource "aws_s3_object" "error_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "error.html"
+  source = var.error_html_filepath
+
+  etag = filemd5(var.error_html_filepath)
+}
+```
