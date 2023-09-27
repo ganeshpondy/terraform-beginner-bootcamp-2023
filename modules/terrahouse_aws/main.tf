@@ -1,10 +1,4 @@
 terraform {
-  cloud {
-    organization = "Terraform_Beginner_Bootcamp_Ganeshpondy"
-    workspaces {
-      name = "terra-house-1"
-    }
-  }
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -16,3 +10,12 @@ terraform {
 provider "aws" {
   # Configuration options
 }
+
+resource "aws_s3_bucket" "website_bucket" {
+  # Bucket Naming Rules
+  bucket = var.bucket_name
+  tags = {
+    UserUuid = var.user_uuid
+  }
+}
+
