@@ -53,12 +53,6 @@ You can use terraform port but it won't for all cloud resources. You need check 
 [Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
 [AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
 
-### Fix Manual Configuration
-
-If someone goes and delete or modifies cloud resource manually through ClickOps. 
-
-<!-- If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
-
 ``` TF
 Import :
 
@@ -67,6 +61,14 @@ terraform import aws_s3_bucket.s3-bucket <bucketname>
 terraform Import random_string.bucket_name <bucketname>
 
 ```
+
+### Fix Manual Configuration
+
+If someone goes and delete or modifies cloud resource manually through ClickOps. 
+
+If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
+
+
 
 ### S3 Bucket Name Varaiable with Condition and Error Message 
 
@@ -83,4 +85,4 @@ variable "bucket_name" {
     error_message = "The bucket name must be between 3 and 63 characters, start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, hyphens, and dots."
   }
 }
-``` -->
+```
