@@ -37,3 +37,50 @@ We can set Terraform Cloud variables to be sensitive so they are not shown visib
 
 
 ---
+
+## 1.2.0 Dealing With Configuration Drift
+
+## What happens if we lose our state file?
+
+If you lose your statefile, you most likley have to tear down all your cloud infrastructure manually.
+
+You can use terraform port but it won't for all cloud resources. You need check the terraform providers documentation for which resources support import.
+
+### Fix Missing Resources with Terraform Import
+
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+
+If someone goes and delete or modifies cloud resource manually through ClickOps. 
+
+<!-- If we run Terraform plan is with attempt to put our infrstraucture back into the expected state fixing Configuration Drift
+
+``` TF
+Import :
+
+terraform import aws_s3_bucket.s3-bucket <bucketname>
+
+terraform Import random_string.bucket_name <bucketname>
+
+```
+
+### S3 Bucket Name Varaiable with Condition and Error Message 
+
+``` JSON
+variable "bucket_name" {
+  description = "The name of the S3 bucket"
+  type        = string
+
+  validation {
+    condition     = (
+      length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 && 
+      can(regex("^[a-z0-9][a-z0-9-.]*[a-z0-9]$", var.bucket_name))
+    )
+    error_message = "The bucket name must be between 3 and 63 characters, start and end with a lowercase letter or number, and can contain only lowercase letters, numbers, hyphens, and dots."
+  }
+}
+``` -->
