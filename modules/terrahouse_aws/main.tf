@@ -7,9 +7,9 @@ terraform {
   }
 }
 
-provider "aws" {
-  # Configuration options
-}
+# provider "aws" {
+#   # Configuration options
+# }
 
 resource "aws_s3_bucket" "website_bucket" {
   # Bucket Naming Rules
