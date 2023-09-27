@@ -5,7 +5,6 @@ tasks:
       source ./bin/generate_tfrc_credentials
       source ./bin/install_terraform_cli.sh
       cp $PROJECT_ROOT/terraform.tfvars.example $PROJECT_ROOT/terraform.tfvars
-      terraform init # Will run during Pod StartUp
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial

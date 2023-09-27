@@ -86,3 +86,15 @@ variable "bucket_name" {
   }
 }
 ```
+
+---
+
+## 1.3.0 Create module as 'terrahouse_aws'
+
+update the output.tf in base 
+
+```json
+output "bucket_name" {
+  value = module.terrahousr_aws.bucket_name
+}
+```
