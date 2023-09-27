@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023 - Week 1
 
-## Root Module Structure
+## 1.0.0 Root Module Structure
 
 Our root module structure is as follows:
 
@@ -17,7 +17,9 @@ PROJECT_ROOT
 
 [Standard Module Structure](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
 
-## Terraform and Input Variables
+---
+
+## 1.1.0 Terraform and Input Variables
 
 ### Terraform Cloud Variables
 
@@ -34,3 +36,4 @@ We can set Terraform Cloud variables to be sensitive so they are not shown visib
 ![Variables_Flow](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/3dcdfa00-6d2e-4b9c-be70-8a743b75429c)
 
 
+---
