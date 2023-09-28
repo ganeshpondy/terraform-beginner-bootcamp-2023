@@ -263,7 +263,6 @@ resource "terraform_data" "content_version" {
 }
 
 ```
-
 content_version = 2
 
 ![05_index_contevt_version_02](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/f5bab798-43c9-40ec-9add-b4461f77698e)
@@ -275,5 +274,38 @@ content_version = 4
 
 ![05_index_contevt_version_04](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/7fbce5f1-4fca-4641-829a-6a0ad1df0702)
 
+---
+
+## 1.7.0 Load Images
+
+#### Upload Impages in webPage
+
+```tf
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset(var.assets_path,"*.{jpg,png,gif,JPG}")
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "assets/${each.key}"
+  source = "${var.assets_path}/${each.key}"
+  etag = filemd5("${var.assets_path}/${each.key}")
+  lifecycle {
+    replace_triggered_by = [terraform_data.content_version.output]
+    ignore_changes = [etag]
+  }
+}
+```
+
+![06_index](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/a9499276-1134-4091-8354-1630c46b274d)
 
 
+---
+## 1.8.0 Enable VSC Extenstion
+
+add below lines in `.gitpod.yaml` 
+```
+vscode:
+  extensions:
+    - amazonwebservices.aws-toolkit-vscode
+    - hashicorp.terraform
+    - mhutchie.git-graph
+    - phil294.git-log--graph
+```
