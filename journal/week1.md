@@ -263,3 +263,17 @@ resource "terraform_data" "content_version" {
 }
 
 ```
+
+content_version = 2
+
+![05_index_contevt_version_02](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/f5bab798-43c9-40ec-9add-b4461f77698e)
+
+
+content_version = 4
+
+![05_index_contevt_version_03](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/fcca582a-9e4d-415e-a082-cdddc9c0a3d8)
+
+![05_index_contevt_version_04](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/7fbce5f1-4fca-4641-829a-6a0ad1df0702)
+
+
+
