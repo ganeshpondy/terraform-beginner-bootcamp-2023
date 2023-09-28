@@ -236,8 +236,30 @@ https://developer.hashicorp.com/terraform/language/resources/provisioners/remote
 
 ---
 
+## 1.6.0 content version
 
+#### lifecycle will copy only `content_version` value chaged, it will not copy if only etag changed
 
+```tf
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = var.index_html_filepath
+  content_type = "text/html"
 
+  etag = filemd5(var.index_html_filepath)   # etag will check the file modified time and copy if the file is modified
+  # lifecycle will copy only `content_version` value chaged, it will not copy if only etag changed
+  lifecycle {
+    replace_triggered_by = [terraform_data.content_version.output]
+    ignore_changes = [etag]
+  }
+}
+```
 
+### Load the content_version from main variable
+```tf
+resource "terraform_data" "content_version" {
+  input = var.content_version
+}
 
+```

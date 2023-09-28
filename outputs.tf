@@ -9,3 +9,7 @@ output "bucket_name" {
 output "cloudfront_url" {
   value = module.terrahousr_aws.cloudfront_url
 }
+
+output "content_version_value" {
+  value = module.terrahousr_aws.content_version_value
+}
