@@ -9,3 +9,7 @@ output "website_endpoint" {
 output "cloudfront_url" {
   value = aws_cloudfront_distribution.s3_distribution.domain_name
 }
+
+output "content_version_value" {
+  value = terraform_data.content_version.output
+}

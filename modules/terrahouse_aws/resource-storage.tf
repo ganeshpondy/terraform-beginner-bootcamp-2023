@@ -28,10 +28,11 @@ resource "aws_s3_object" "index_html" {
   content_type = "text/html"
 
   etag = filemd5(var.index_html_filepath)   # etag will check the file modified time and copy if the file is modified
-  # lifecycle {
-  #   replace_triggered_by = [terraform_data.content_version.output]
-  #   ignore_changes = [etag]
-  # }
+  # lifecycle will copy only `content_version` value chaged, it will not copy if only etag changed
+  lifecycle {
+    replace_triggered_by = [terraform_data.content_version.output]
+    ignore_changes = [etag]
+  }
 }
 
 # # Upload Impages in webPage
