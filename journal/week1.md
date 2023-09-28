@@ -175,7 +175,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 
 https://developer.hashicorp.com/terraform/language/resources/terraform-data
 
-## Provisioners
+## 1.5.0 Provisioners
 
 Provisioners allow you to execute commands on compute instances eg. a AWS CLI command.
 
@@ -228,12 +228,15 @@ https://developer.hashicorp.com/terraform/language/resources/provisioners/remote
 
 #### Error Page
 
-
+![04_Error](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/4494e3cd-74c5-4474-a034-54afd9ef658b)
 
 #### Index Page
 
+![05_index_01](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/bc91b795-ec25-41dd-8e54-aba6d833992f)
 
 ---
+
+
 
 
 
