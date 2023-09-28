@@ -297,7 +297,31 @@ resource "aws_s3_object" "upload_assets" {
 ![06_index](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/a9499276-1134-4091-8354-1630c46b274d)
 
 
+### Issues : when copying files from `assert` directory
+
+``` YAML
+│ Error: Error in function call
+│ 
+│   on modules/terrahouse_aws/resource-storage.tf line 43, in resource "aws_s3_object" "upload_assets":
+│   43:   etag = filemd5("${var.assets_path}${each.key}")
+│     ├────────────────
+│     │ while calling filemd5(path)
+│     │ each.key is "King.jpg"
+│     │ var.assets_path is "/workspace/terraform-beginner-bootcamp-2023/public/assets"
+│ 
+│ Call to function "filemd5" failed: open /workspace/terraform-beginner-bootcamp-2023/public/assetsKing.jpg: no such file or directory.
+╵
+```
+#### Solution:
+
+added `/` between assets_path and key .
+
+```tf
+  etag = filemd5("${var.assets_path}/${each.key}")
+```
+
 ---
+
 ## 1.8.0 Enable VSC Extenstion
 
 add below lines in `.gitpod.yaml` 
