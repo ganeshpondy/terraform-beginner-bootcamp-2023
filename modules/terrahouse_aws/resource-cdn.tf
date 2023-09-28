@@ -1,3 +1,4 @@
+# Create origin access control for Cloudfront
 resource "aws_cloudfront_origin_access_control" "default" {
   name   = "OAC ${var.bucket_name}"
   description  = "Origin Access Controls for Static Website Hosting ${var.bucket_name}"
@@ -10,6 +11,7 @@ locals {
   s3_origin_id = "MyS3Origin"
 }
 
+# Create cloudfront distribution
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {

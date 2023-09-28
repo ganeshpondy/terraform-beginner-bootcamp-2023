@@ -20,7 +20,7 @@ resource "aws_s3_bucket_website_configuration" "website_configuration" {
   }
 }
 
-# Copy Local Files to S3 Bucket
+# Transfer Local Files to S3 Bucket
 resource "aws_s3_object" "index_html" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "index.html"
@@ -28,24 +28,24 @@ resource "aws_s3_object" "index_html" {
   content_type = "text/html"
 
   etag = filemd5(var.index_html_filepath)   # etag will check the file modified time and copy if the file is modified
-  lifecycle {
-    replace_triggered_by = [terraform_data.content_version.output]
-    ignore_changes = [etag]
-  }
+  # lifecycle {
+  #   replace_triggered_by = [terraform_data.content_version.output]
+  #   ignore_changes = [etag]
+  # }
 }
 
-# Upload Impages in webPage
-resource "aws_s3_object" "upload_assets" {
-  for_each = fileset(var.assets_path,"*.{jpg,png,gif.JPG}")
-  bucket = aws_s3_bucket.website_bucket.bucket
-  key    = "assets/${each.key}"
-  source = "${var.assets_path}/${each.key}"
-  etag = filemd5("${var.assets_path}${each.key}")
-  lifecycle {
-    replace_triggered_by = [terraform_data.content_version.output]
-    ignore_changes = [etag]
-  }
-}
+# # Upload Impages in webPage
+# resource "aws_s3_object" "upload_assets" {
+#   for_each = fileset(var.assets_path,"*.{jpg,png,gif.JPG}")
+#   bucket = aws_s3_bucket.website_bucket.bucket
+#   key    = "assets/${each.key}"
+#   source = "${var.assets_path}/${each.key}"
+#   etag = filemd5("${var.assets_path}${each.key}")
+#   lifecycle {
+#     replace_triggered_by = [terraform_data.content_version.output]
+#     ignore_changes = [etag]
+#   }
+# }
 
 resource "aws_s3_object" "error_html" {
   bucket = aws_s3_bucket.website_bucket.bucket
