@@ -12,4 +12,5 @@ terraform {
 # }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity
+# To get command `aws sts get-caller-identity` details
 data "aws_caller_identity" "current" {}
