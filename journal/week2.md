@@ -1,5 +1,12 @@
 # Terraform Beginner Bootcamp 2023 - Week 2
 
+## TerraTowns Provider Physical Diagram
+
+![TerraTowns_Provider_Physical_Diagram](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/0008aa19-66ce-46bb-b07e-43ae39458cc8)
+
+
+---
+
 ## 2.0.0 Terratowns Mock Server
 
 ### Clone the Code from below Repo 
@@ -26,7 +33,7 @@ Move the Terratowns Bin Files to bin Directory
 
 ---
 
-## 2.1.0 Working with Ruby
+## 2.0.1 Working with Ruby
 
 ### Bundler
 
@@ -82,6 +89,30 @@ All of the code for our server is stored in the `server.rb` file.
 
 ---
 
+### Anatomy_of_a_Request
+
+![Anatomy_of_a_Request](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/98a55ec3-ad52-42d4-8d4b-397b75d9d471)
+
+
 ### Check EndPoits (Create, Read, Update, Delete)
 
 Find the Outputs below :
+
+- Create :
+  ./bin/terratowns/create
+- Read :
+  ./bin/terratowns/read <UUID>
+- Update :
+  ./bin/terratowns/update <UUID>
+- Destroy :
+  ./bin/terratowns/delete <UUID>
+
+#### Output:
+
+![01_Terratowns_bin_script_03](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/9c57aa8a-7256-4626-9351-78e4cdbf5c36)
+
+#### Ruby Console Output :
+
+![01_Terratowns_02_Console](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/48538fef-955c-48f6-bde6-5fe961bf8545)
+
+---
