@@ -294,3 +294,16 @@ Terraform has compared your real infrastructure against your configuration and f
 gitpod /workspace/terraform-beginner-bootcamp-2023 (39-terratowns-provider) $ 
 
 ```
+---
+
+## 2.3.0 Update main.go module
+
+All of the code for our server is stored in the `server.rb` file.
+
+## CRUD
+
+Terraform Provider resources utilize CRUD.
+
+CRUD stands for Create, Read Update, and Delete
+
+https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
