@@ -300,10 +300,42 @@ gitpod /workspace/terraform-beginner-bootcamp-2023 (39-terratowns-provider) $
 
 All of the code for our server is stored in the `server.rb` file.
 
-## CRUD
+---
+
+## 2.4.0 CRUD
 
 Terraform Provider resources utilize CRUD.
 
 CRUD stands for Create, Read Update, and Delete
 
 https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
+
+### Custom Terraform Provider
+
+Steps:
+
+./bin/build_provider
+terraform init
+terraform plan
+terraform apply --auto-approve
+
+### Issue : 
+
+```yaml
+Error: failed to create home resource, status_code: 401, status: 401 Unauthorized, body map[err:a1003 Failed to authenicate, bearer token invalid and/or teacherseat_user_uuid invalid]
+│ 
+│   with terratowns_home.home,
+│   on main.tf line 40, in resource "terratowns_home" "home":
+│   40: resource "terratowns_home" "home" {
+│ 
+```
+
+#### Solution :
+
+in `server.rb` file, modified the UUID value to my UUID value, then `tf apply` worked without issue
+
+```
+  def x_user_uuid
+    return 'e328f4ab-b99f-421c-84c9-4ccea042c7d1'
+  end
+```
