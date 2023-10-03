@@ -116,3 +116,18 @@ Find the Outputs below :
 ![01_Terratowns_02_Console](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/48538fef-955c-48f6-bde6-5fe961bf8545)
 
 ---
+
+## 2.1.0 Terraform Provider
+
+### Skeleton Setup 
+
+Create terraform-provider-terratowns Folder and create below Go Fils
+
+1. main.go
+2. go.mod
+3. go.sum
+
+Create  `terraformrc` file and in bin folder create `build_provider` script
+
+run `go build -o terraform-provider-terratowns_V1.0.0` to Build the Module
+
