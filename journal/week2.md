@@ -329,6 +329,9 @@ Error: failed to create home resource, status_code: 401, status: 401 Unauthorize
 │   40: resource "terratowns_home" "home" {
 │ 
 ```
+![2-4-0-tfplan_error](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/4923b81c-f3a9-42d1-95d1-dc0a020b5518)
+
+
 
 #### Solution :
 
@@ -339,3 +342,10 @@ in `server.rb` file, modified the UUID value to my UUID value, then `tf apply` w
     return 'e328f4ab-b99f-421c-84c9-4ccea042c7d1'
   end
 ```
+
+Then we are able to run `tf apply` without issue and modified changes are updated with issue
+
+![2-4-0-tfapply](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/a973d299-11c5-4bf8-b10a-237bf4600c9d)
+
+---
+
