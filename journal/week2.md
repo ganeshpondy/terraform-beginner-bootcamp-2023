@@ -376,13 +376,16 @@ We have removed Bucket_name variable from the code, now random name will be gene
 
 We have update the API URL from Local to `https://terratowns.cloud/api`
 
-#### terratowns.cloud in Missingo without Backend
+### Terratowns.cloud in Missingo without Backend
 
-#### terratowns.cloud in Missingo with Backend CloudFront
-
-
+![2-5-0-Missingo](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/fc84fd3c-5ab4-4de6-afec-70cb58d0b1dd)
 
 
+### Terratowns.cloud in Missingo with Backend CloudFront
 
+![2-5-0-Missingo_with_Backend_01](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/990320ed-4f5e-4c22-8f9e-57d69d71af8a)
+
+
+![2-5-0-Missingo_with_Backend_02](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/1d0b146f-73b6-4e5c-bb57-de91b75009c4)
 
 ---
