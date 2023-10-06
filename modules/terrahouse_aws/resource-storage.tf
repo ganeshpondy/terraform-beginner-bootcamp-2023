@@ -1,7 +1,7 @@
 # Create S3 Bucket
 resource "aws_s3_bucket" "website_bucket" {
   # Bucket Naming Rules
-  bucket = var.bucket_name
+  # bucket = var.bucket_name
   tags = {
     UserUuid = var.user_uuid
   }

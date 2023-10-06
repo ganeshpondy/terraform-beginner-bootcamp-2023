@@ -349,3 +349,40 @@ Then we are able to run `tf apply` without issue and modified changes are update
 
 ---
 
+## 2.5.0 Terratown Connection with Missingo
+
+#### Update UUID & Token as Terraform Env Variable 
+
+```yaml
+
+export TF_VAR_terratowns_access_token="aaaa-1111-2222-2222-bbbb"
+gp env TF_VAR_terratowns_access_token="aaaa-1111-2222-2222-bbbb"
+
+teacherseat_user_uuid
+export TF_VAR_teacherseat_user_uuid="cccc-1111-2222-2222-dddd"
+gp env TF_VAR_teacherseat_user_uuid="cccc-1111-2222-2222-dddd"
+
+gitpod /workspace/terraform-beginner-bootcamp-2023 (41-terratown-test) $ env | grep -i TF_VAR
+TF_VAR_teacherseat_user_uuid=aaaa-1111-2222-2222-bbbb
+TF_VAR_terratowns_access_token=cccc-1111-2222-2222-dddd
+
+```
+
+### Remove Bucket_name from the Code
+
+We have removed Bucket_name variable from the code, now random name will be generated from the code
+
+### update api url
+
+We have update the API URL from Local to `https://terratowns.cloud/api`
+
+#### terratowns.cloud in Missingo without Backend
+
+#### terratowns.cloud in Missingo with Backend CloudFront
+
+
+
+
+
+
+---
