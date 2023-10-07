@@ -5,20 +5,13 @@ terraform {
       version = "1.0.0"
     }
   }
-  #backend "remote" {
-  #  hostname = "app.terraform.io"
-  #  organization = "ExamPro"
-
-  #  workspaces {
-  #    name = "terra-house-1"
-  #  }
-  #}
-  #cloud {
-  #  organization = "ExamPro"
-  #  workspaces {
-  #    name = "terra-house-1"
-  #  }
-  #}
+  # Terraform cloud Setting
+  cloud {
+   organization = "Terraform_Beginner_Bootcamp_Ganeshpondy"
+   workspaces {
+     name = "terra-house-1"
+   }
+  }
 
 }
 
@@ -47,6 +40,22 @@ Arcanum is a game from 2001 that shipped with alot of bugs.
 Modders have removed all the originals making this game really fun
 to play (despite that old look graphics). This is my guide that will
 show you how to play arcanum without spoiling the plot.
+DESCRIPTION
+  domain_name = module.terrahouse_aws.cloudfront_url
+  # domain_name = "3fdq3gz.cloudfront.net"
+  town = "missingo"
+  content_version = 1
+}
+
+resource "terratowns_home" "home" {
+  name = "How to Prepare Karupatti Mittai"
+  description = <<DESCRIPTION
+"Karupatti Mittai" refers to sweets made using "karupatti" or palm jaggery. 
+Palm jaggery is a natural sweetener derived from the sap of palm trees and 
+is considered healthier than regular jaggery due to its rich mineral content and low glycemic index.
+
+Enjoy your Karupatti Mittai, a traditional and healthy TamilNadu treat (Southern State of India)!
+
 DESCRIPTION
   domain_name = module.terrahouse_aws.cloudfront_url
   # domain_name = "3fdq3gz.cloudfront.net"
