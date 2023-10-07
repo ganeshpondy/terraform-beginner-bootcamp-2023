@@ -13,14 +13,28 @@ variable "teacherseat_user_uuid" {
  type = string
 }
 
+variable "arcanum" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
+}
+
+variable "Karupatti" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
+}
+
 # variable "bucket_name" {}
 
 # S3 Web-Site Variable
-variable "index_html_filepath" {}
-variable "error_html_filepath" {}
+# variable "index_html_filepath" {}
+# variable "error_html_filepath" {}
 
-variable "content_version" {
-    type        = number
-}
+# variable "content_version" {
+#     type        = number
+# }
 
-variable "assets_path" {}
+# variable "assets_path" {}

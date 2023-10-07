@@ -1,15 +1,14 @@
 output "bucket_name" {
-  value = module.terrahouse_aws.bucket_name
+  description = "Bucket name for our static website hosting"
+  value = module.home_arcanum_hosting.bucket_name
 }
 
-output "website_endpoint" {
-  value = module.terrahouse_aws.website_endpoint
+output "s3_website_endpoint" {
+  description = "S3 Static Website hosting endpoint"
+  value = module.home_arcanum_hosting.website_endpoint
 }
 
 output "cloudfront_url" {
-  value = module.terrahouse_aws.cloudfront_url
-}
-
-output "content_version_value" {
-  value = module.terrahouse_aws.content_version_value
+  description = "The CloudFront Distribution Domain Name"
+  value = module.home_arcanum_hosting.domain_name
 }
