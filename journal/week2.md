@@ -408,9 +408,21 @@ terraform {
 ```
 and update the below setting in terraform.io page
 
+![2-6-0-Terraform_Cloud_Local_Setting](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/ef293f67-ee8d-4914-a181-b57a71a81de4)
+
+
 ### Create two hosuses 
 
-#### House-1: Chennai
+![2-6-0-TerraTowns_Page](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/d987ccec-d81d-4219-b3e5-cb4e9fb2f952)
 
-#### House-2: Karupatti Mittai 
 
+### House-1: Chennai
+
+![2-6-0-Chennai](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/e546c1dc-e92e-4267-ae43-73bc7704098c)
+
+
+### House-2: Karupatti Mittai 
+
+![2-6-0-Karupatti_Mittai](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/b40e9824-422a-462b-8a28-2b9c21d9c026)
+
+---
