@@ -389,3 +389,28 @@ We have update the API URL from Local to `https://terratowns.cloud/api`
 ![2-5-0-Missingo_with_Backend_02](https://github.com/ganeshpondy/terraform-beginner-bootcamp-2023/assets/18094905/1d0b146f-73b6-4e5c-bb57-de91b75009c4)
 
 ---
+
+## 2.6.0 Multi Home Terrafrom Cloud
+
+Modify the code to update the state file in terraform cloud
+
+```tf
+terraform {
+  # Terraform cloud Setting
+  cloud {
+   organization = "Terraform_Beginner_Bootcamp_Ganeshpondy"
+   workspaces {
+     name = "terra-house-1"
+   }
+  }
+
+}
+```
+and update the below setting in terraform.io page
+
+### Create two hosuses 
+
+#### House-1: Chennai
+
+#### House-2: Karupatti Mittai 
+

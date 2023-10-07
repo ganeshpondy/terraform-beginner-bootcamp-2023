@@ -22,32 +22,35 @@ provider "terratowns" {
   token = var.terratowns_access_token
 }
 
-module "terrahouse_aws" {
-  source = "./modules/terrahouse_aws"
+module "home_arcanum_hosting" {
+  source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  # bucket_name = var.bucket_name
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version = var.content_version
-  assets_path = var.assets_path
+  public_path = var.arcanum.public_path
+  content_version = var.arcanum.content_version
 }
 
 
 resource "terratowns_home" "home" {
-  name = "How to play Arcanum in 2023!!!!!!!!"
+  name = "Chennai 2023!!!!!!!!"
   description = <<DESCRIPTION
-Arcanum is a game from 2001 that shipped with alot of bugs.
-Modders have removed all the originals making this game really fun
-to play (despite that old look graphics). This is my guide that will
-show you how to play arcanum without spoiling the plot.
+Chennai, on the Bay of Bengal, is the capital of the state of Tamil Nadu. 
+The city is home to Fort St. George, built in 1644 
+when it was called Madras. 
 DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_arcanum_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
   town = "missingo"
-  content_version = 1
+  content_version = var.arcanum.content_version
 }
 
-resource "terratowns_home" "home" {
+module "home_karupatti_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.Karupatti.public_path
+  content_version = var.Karupatti.content_version
+}
+
+resource "terratowns_home" "karupatti" {
   name = "How to Prepare Karupatti Mittai"
   description = <<DESCRIPTION
 "Karupatti Mittai" refers to sweets made using "karupatti" or palm jaggery. 
@@ -57,7 +60,7 @@ is considered healthier than regular jaggery due to its rich mineral content and
 Enjoy your Karupatti Mittai, a traditional and healthy TamilNadu treat (Southern State of India)!
 
 DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_karupatti_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
   town = "missingo"
   content_version = 1
