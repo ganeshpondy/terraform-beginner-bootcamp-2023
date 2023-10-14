@@ -39,7 +39,8 @@ when it was called Madras.
 DESCRIPTION
   domain_name = module.home_arcanum_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
-  town = "missingo"
+  # town = "missingo"
+  town = "the-nomad-pad"
   content_version = var.arcanum.content_version
 }
 
@@ -62,6 +63,7 @@ Enjoy your Karupatti Mittai, a traditional and healthy TamilNadu treat (Southern
 DESCRIPTION
   domain_name = module.home_karupatti_hosting.domain_name
   # domain_name = "3fdq3gz.cloudfront.net"
-  town = "missingo"
+  # town = "missingo"
+  town = "cooker-cove"
   content_version = 1
 }
